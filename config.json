@@ -1,0 +1,30 @@
+{
+   "bridge": {
+      "name": "Glue-test",
+      "username": "CA:22:3D:F3:CE:38",
+      "port": 51826,
+      "pin": "314-15-926"
+   },
+   "description": "GLUE adapter test",
+   "accessories": [
+      {
+         "accessory": "Http",
+         "name": "Lamp",
+         "switchHandling": "realtime",
+         "on_url": "http://localhost:8080/we/mqtt_events",
+         "off_url": "http://localhost:8080/we/mqtt_events",
+         "status_url": "http://localhost:8080/we/mqtt_events"
+      },
+      {
+         "accessory": "Http",
+         "name": "Lamp-brightness",
+         "switchHandling": "realtime",
+         "on_url": "http://localhost:8080/we/mqtt_events",
+         "off_url": "http://localhost:8080/we/mqtt_events",
+         "status_url": "http://localhost:8080/we/mqtt_events",
+         "brightnessHandling": "realtime",
+         "brightness_url": "http://localhost:8080/we/mqtt_events",
+         "brightnesslvl_url": "http://localhost:8080/we/mqtt_events"
+      }
+   ]
+}
