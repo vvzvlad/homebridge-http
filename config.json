@@ -1,30 +1,22 @@
 {
    "bridge": {
-      "name": "Glue-test",
-      "username": "CA:22:3D:F3:CE:38",
+      "name": "Glue-test2",
+      "username": "CA:22:3D:F3:CE:42",
       "port": 51826,
       "pin": "314-15-926"
    },
    "description": "GLUE adapter test",
    "accessories": [
       {
-         "accessory": "Http",
-         "name": "Lamp",
-         "switchHandling": "realtime",
-         "on_url": "http://localhost:8080/we/mqtt_events",
-         "off_url": "http://localhost:8080/we/mqtt_events",
-         "status_url": "http://localhost:8080/we/mqtt_events"
-      },
-      {
-         "accessory": "Http",
+         "accessory": "glue",
          "name": "Lamp-brightness",
-         "switchHandling": "realtime",
-         "on_url": "http://localhost:8080/we/mqtt_events",
-         "off_url": "http://localhost:8080/we/mqtt_events",
-         "status_url": "http://localhost:8080/we/mqtt_events",
-         "brightnessHandling": "realtime",
-         "brightness_url": "http://localhost:8080/we/mqtt_events",
-         "brightnesslvl_url": "http://localhost:8080/we/mqtt_events"
+         "switchHandling": "yes",
+         "on_url": "http://192.168.88.250:8080/we/homebridge?action=set_power&device=light_1&power=on",
+         "off_url": "http://192.168.88.250:8080/we/homebridge?action=set_power&device=light_1&power=off",
+         "status_url": "http://192.168.88.250:8080/we/homebridge?action=get_status&device=light_1",
+         "brightnessHandling": "yes",
+         "brightness_url": "http://192.168.88.250:8080/we/homebridge?action=set_brightness&device=light_1&brightness=%b",
+         "brightnesslvl_url": "http://192.168.88.250:8080/we/homebridge?action=get_status&device=light_1"
       }
    ]
 }

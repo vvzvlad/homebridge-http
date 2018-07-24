@@ -6,7 +6,7 @@ var pollingtoevent = require("polling-to-event");
 module.exports = function (homebridge) {
    Service = homebridge.hap.Service;
    Characteristic = homebridge.hap.Characteristic;
-   homebridge.registerAccessory("homebridge-http", "Http", HttpAccessory);
+   homebridge.registerAccessory("homebridge-glue", "glue", HttpAccessory);
 };
 
 
@@ -61,6 +61,7 @@ function HttpAccessory(log, config) {
 
       statusemitter.on("statuspoll", function (responseBody) {
          let value = JSON.parse(responseBody)
+         let binaryState
          if (value.state === "ON") binaryState = 1
          if (value.state === "OFF") binaryState = 0
 
