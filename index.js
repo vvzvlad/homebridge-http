@@ -190,6 +190,7 @@ HttpAccessory.prototype = {
             callback(error);
          } else {
             let value = JSON.parse(responseBody)
+            let binaryState = 0
             if (value.state === "ON") binaryState = 1
             if (value.state === "OFF") binaryState = 0
             var powerOn = binaryState > 0;
